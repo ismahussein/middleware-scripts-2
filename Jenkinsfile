@@ -2,24 +2,9 @@ pipeline {
     agent any
 
     stages{
-        stage("whoareu"){
+        stage("create zip file"){
             steps{
-                echo "hello wunna"
-            }
-        }
-        stage("test"){
-            steps{
-                echo "Test"
-            }
-        }
-        stage("deploy"){
-            steps{
-                echo "Deploy"
-            }
-        }
-        stage("build"){
-            steps{
-                echo "build"
+                 zip middlewasreScript$-{BUILD_NUMBER}.zip *  --exclude Jenkinsfile README.md 
             }
         }
     }
